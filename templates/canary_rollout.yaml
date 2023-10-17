@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: canary-rollout
+  name: {{ .Release.Name }}
 spec:
   replicas: 5
   selector:
@@ -41,4 +41,3 @@ spec:
       - pause:
           duration: 1m # 1 minute
       - setWeight: 20
-      - pause: {} # pause indefinitely
