@@ -34,16 +34,21 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     canary: #Indicates that the rollout should use the Canary strategy
-      maxSurge: "25%"
+      maxSurge: "20%"
       maxUnavailable: 0
       steps:
-      - setWeight: 25
+      - setWeight: 20
       - pause:
-          duration: 30s # 1 minute
-      - setWeight: 50
+          duration: 20s # 1 minute
+      - setWeight: 40
       - pause:
-          duration: 30s # 1 minute
-      - setWeight: 75
+          duration: 20s # 1 minute
+      - setWeight: 60
       - pause:
-          duration: 30s # 1 minute
+          duration: 20s # 1 minute
+      - setWeight: 80
+      - pause:
+          duration: 20s # 1 minute
       - setWeight: 100
+      - pause:
+          duration: 20s # 1 minute
